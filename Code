@@ -38,15 +38,15 @@ def send_mail():
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login('soutik123gayen@gmail.com','dxnionxamnksylcl')
+    server.login('sender_mail','password')
 
     subject = 'The Price for Redmi 9 pro fell down!'
     body= 'Check this link: https://www.amazon.in/Redmi-Note-Pro-Interstellar-Snapdragon/dp/B077PWBC78/ref=sr_1_1?dchild=1&keywords=redmi+9+pro&qid=1625844433&sr=8-1'
 
     msg = f"Subject: {subject}\n\n{body}"
     server.sendmail(
-        'soutik123gayen@gmail.com',
-        'soutikgayen2409@gmail.com',
+        'sender_mail',
+        'receiver mail',
         msg
     )
     print("Mail Sent")
@@ -54,5 +54,5 @@ def send_mail():
 
 while(True):
     check_price()
-    time.sleep(60)
+    time.sleep(60*60*24)
 
